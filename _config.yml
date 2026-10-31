@@ -1,3 +1,9 @@
-theme: jekyll-theme-minimal
-title: Enfolded World
-description: Coming soon
+# Public landing page for Enfolded.
+# index.html has no front matter, so Jekyll copies it unchanged.
+# jekyll-theme-minimal is unset on purpose: its iPhone script disables
+# pinch-zoom, its links are identified by color alone, and the theme can
+# load a conditional analytics snippet plus an old IE script from a CDN.
+title: Enfolded
+description: A persistent, shared world at nested scales. Open source, and not yet hosted.
+exclude:
+  - README.md
