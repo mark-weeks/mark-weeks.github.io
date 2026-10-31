@@ -1,3 +1,12 @@
-theme: jekyll-theme-minimal
-title: Enfolded World
-description: Coming soon
+# GitHub Pages applies jekyll-theme-primer when no theme is set, and it
+# publishes that theme's own assets. index.html has no front matter, so
+# Jekyll copies it unchanged and the page does not use the theme.
+#
+# A custom exclude replaces Jekyll's default list. The github-pages gem
+# adds CNAME only when exclude is left at that default, so name it here.
+# Keep CNAME in this list if enfolded.world is later pointed at this
+# repository. Pages reads the file from the repo for the custom domain;
+# Jekyll should not publish it as a page.
+exclude:
+  - README.md
+  - CNAME
