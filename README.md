@@ -2,7 +2,7 @@
 
 Public introduction to [Enfolded](https://github.com/mark-weeks/hello-nested-worlds-adventure), the open-source nested-scale world.
 
-GitHub Pages publishes [`index.html`](index.html) from this repository. That file has no front matter, so Jekyll copies it unchanged and the page bypasses the theme. The page’s `<head>` holds the title and description.
+GitHub Pages publishes [`index.html`](index.html) from this repository. That file has no front matter, so Jekyll copies it unchanged and the page bypasses the theme. The page’s `<head>` holds the title and description. The favicon, touch icons, and `og-image.png` sit at the site root, and the head links them.
 
 GitHub Pages applies its default Primer theme when this repository does not set one, and the Pages build includes that theme’s assets. `index.html` does not use them. The page file has no JavaScript, no tracker, and no external font.
 
