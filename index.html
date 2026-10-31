@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A persistent, shared world at nested scales. Open source, and not yet hosted.">
   <meta name="color-scheme" content="light">
+  <meta property="og:title" content="Enfolded — a shared, persistent world">
+  <meta property="og:description" content="A persistent, shared world at nested scales. Open source, and not yet hosted.">
+  <meta property="og:url" content="https://mark-weeks.github.io/">
   <title>Enfolded — a shared, persistent world</title>
   <style>
     :root {
@@ -13,18 +16,12 @@
       --link: #0a3d73;
       --visited: #4c1d6e;
       --line: #cfc6b8;
-      --skip-bg: #1b1612;
-      --skip-ink: #f3eee6;
     }
 
     *,
     *::before,
     *::after {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: auto;
     }
 
     body {
@@ -36,24 +33,10 @@
       line-height: 1.6;
     }
 
-    .skip {
-      position: absolute;
-      left: 1rem;
-      top: 1rem;
-      padding: 0.5rem 0.75rem;
-      background: var(--skip-bg);
-      color: var(--skip-ink);
-      transform: translateY(-200%);
-      z-index: 1;
-    }
-
-    .skip:focus {
-      transform: none;
-    }
-
     main,
     footer {
-      width: min(40rem, calc(100% - 2.5rem));
+      width: calc(100% - 2.5rem);
+      max-width: 40rem;
       margin-left: auto;
       margin-right: auto;
     }
@@ -63,21 +46,11 @@
       padding-bottom: 1rem;
     }
 
-    main:focus {
-      outline: none;
-    }
-
-    main:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 0.25rem;
-    }
-
     h1,
     h2 {
       font-family: Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif;
       font-weight: 700;
       line-height: 1.2;
-      color: var(--ink);
     }
 
     h1 {
@@ -124,20 +97,6 @@
       outline: none;
     }
 
-    a:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 2px;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem 1.25rem;
-      list-style: none;
-      padding: 0;
-      margin: 0 0 0.5rem;
-    }
-
     .read {
       padding-left: 1.25rem;
     }
@@ -163,30 +122,16 @@
         font-size: 2.125rem;
       }
     }
-
-    @media (forced-colors: active) {
-      a {
-        text-decoration: underline;
-      }
-    }
   </style>
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
-  <main id="content" tabindex="-1">
+  <main>
     <header>
       <h1>Enfolded</h1>
       <p class="lead">A shared, persistent world, inhabited at the same time by people and AI agents, nested from a multiverse down to a particle.</p>
     </header>
 
-    <p>Enfolded is open source. <a href="https://enfolded.world">enfolded.world</a> is the launch target, and the hosted world is not deployed. This page is an introduction: what the project is, who it is for, how to ask for an invite, and what comes next.</p>
-
-    <nav aria-label="Project">
-      <ul class="links">
-        <li><a href="https://github.com/mark-weeks/hello-nested-worlds-adventure">Enfolded repository</a></li>
-        <li><a href="https://github.com/mark-weeks/hello-nested-worlds-adventure/tree/main/docs">Documentation</a></li>
-      </ul>
-    </nav>
+    <p>Enfolded is open source. enfolded.world is the launch target, and the hosted world is not deployed. This page is an introduction: what the project is, who it is for, how to ask for an invite, and what comes next.</p>
 
     <h2>What it is</h2>
     <p>Enfolded is one shared world for every person and agent. It is designed as one history that later players inherit, and it is built for people and AI agents to be in it together. A first visit drops you into the middle of a world already in motion. A returning player resumes their last place in that world, including on another device.</p>
@@ -196,33 +141,32 @@
     <p>The name comes from David Bohm’s <a href="https://en.wikipedia.org/wiki/Implicate_and_explicate_order">implicate order</a>: the idea that every part enfolds the whole.</p>
 
     <h2>Providers and models</h2>
-    <p>Enfolded is model-agnostic, and multi-model, by design. Its identity is the world, the memory, and the rules of play. Providers, models, and model versions are replaceable. They are chosen per task — a place’s voice, an agent’s voice, a reading of a typed intention, a moderation check — for quality, capability, reliability, and cost. No provider or model family has a permanent preference. Any provider can be considered.</p>
-    <p>Text generation currently uses Anthropic. Optional scene images use fal.ai. Those are the two services wired up today. Choosing a model name stays inside the current provider. Another provider needs an adapter and a check before it can take a task.</p>
+    <p>Enfolded is designed so providers and models can be replaced. Its identity is the world, the memory, and the rules of play. The provider and model decision records that as policy: choices are meant to follow quality, capability, reliability, and cost, and no provider or model family has a permanent preference.</p>
+    <p>The current text adapter is Anthropic. Optional scene images use fal.ai. There is no multi-provider selector. A model name stays on that text adapter. Another provider needs its own adapter and a check before it can take a task.</p>
 
     <h2>Who it is for</h2>
     <p>For people who want to explore a world that is already underway, and for the agents who inhabit it with them. Playing, saying what you noticed, and helping a newcomer are enough to take part.</p>
-    <p><a href="https://github.com/mark-weeks">Mark Weeks</a> maintains Enfolded.</p>
+    <p>Mark Weeks maintains Enfolded.</p>
 
     <h2>Where things stand</h2>
-    <p>Nothing is deployed, and the chronicle is empty. Human pilot evidence, hosted recovery, and live-model quality remain the launch gates.</p>
+    <p>Status as of 2026-10-31, Enfolded main at a9c62ac.</p>
+    <p>Nothing is deployed. The chronicle, the world’s saved history, has no entries yet. The launch gates still open include human pilot evidence, hosted recovery, live-model quality, and the hosted runtime on cohort devices.</p>
     <p>Two QA prereleases, v0.1.1-qa.1 and v0.1.1-qa.2, were cut on 2026-08-31 for local QA.</p>
     <p>Journal, profile, and actions are implemented. Automated tests cover that implementation. What new players make of them is still unmeasured. The invited study below is still ahead, and no cohort data is recorded.</p>
     <p>Instructions for a <a href="https://github.com/mark-weeks/hello-nested-worlds-adventure/blob/main/README.md#running-locally">local copy</a> are in the repository README.</p>
 
     <h2>Ask for an invite</h2>
     <p>Invites are personal. The maintainer mints one for a named person. The pilot protocol describes a first look at 2–3 newcomers on a temporary staging world, then 8–12 people on one continuing world for seven days each.</p>
-    <p>To ask to be considered when a cohort opens, <a href="https://github.com/mark-weeks/hello-nested-worlds-adventure/issues/new/choose">open a blank issue</a> on the repository and say you would like an invite. A GitHub account is required. Leave out secrets, private notes, and keys. If you have played a local copy, use the <a href="https://github.com/mark-weeks/hello-nested-worlds-adventure/issues/new?template=playtesting.yml">playtesting form</a> for what you noticed.</p>
+    <p>Invites open when a cohort is scheduled. Watch the <a href="https://github.com/mark-weeks/hello-nested-worlds-adventure">Enfolded repository</a> for news.</p>
 
     <h2>What comes next</h2>
     <p>The next step is that small invited study: whether people become curious, whether consequences are understandable, and whether there is a reason to return to the same world.</p>
-    <p>Later work is meant to follow what the study shows. Rankings, spoken input and playback, crafting, guilds, Hyperleap, and expanded agent cognition sit outside this pilot.</p>
+    <p>Later work is meant to follow what the study shows. Rankings, spoken input and playback, crafting, guilds, and expanded agent cognition sit outside this pilot.</p>
 
     <h2>Read</h2>
     <ul class="read">
-      <li><a href="https://github.com/mark-weeks/hello-nested-worlds-adventure">Enfolded repository</a></li>
       <li><a href="https://github.com/mark-weeks/hello-nested-worlds-adventure/tree/main/docs">Documentation</a></li>
       <li><a href="https://github.com/mark-weeks/hello-nested-worlds-adventure/blob/main/CONTRIBUTING.md">Contributing</a></li>
-      <li><a href="https://github.com/mark-weeks/hello-nested-worlds-adventure/blob/main/static/guide.html">Player guide</a> (source for the game client)</li>
       <li><a href="https://github.com/mark-weeks/hello-nested-worlds-adventure/blob/main/docs/decisions/ADR-034-provider-and-model-optionality.md">Provider and model decision</a></li>
       <li><a href="https://github.com/mark-weeks/hello-nested-worlds-adventure/blob/main/docs/evaluation/2026-09-12-pilot-protocol.md">Pilot protocol</a></li>
       <li><a href="https://github.com/mark-weeks/hello-nested-worlds-adventure/blob/main/docs/evaluation/2026-10-03-beta-readiness.md">Beta readiness</a></li>
